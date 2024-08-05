@@ -1,8 +1,51 @@
-<h2>Font Duo</h2>
-<p>Click the button to create sample text.</p>
-<button id="create">Create Text</button>
-<script>
-document.getElementById('create').onclick = () => {
-  parent.postMessage({ pluginMessage: { type: 'create-text' } }, '*')
-}
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        select, button { margin: 10px 0; display: block; width: 100%; }
+        #preview { border: 1px solid #ccc; padding: 10px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Font Duo</h2>
+    
+    <label for="vibe">Choose Your Vibe:</label>
+    <select id="vibe">
+        <option value="minimalist">Minimalist</option>
+        <option value="modern">Modern</option>
+        <option value="classic">Classic</option>
+    </select>
+
+    <button id="generatePair">Generate Font Pair</button>
+
+    <div id="preview">
+        <h3 id="previewHeading">Preview Heading</h3>
+        <p id="previewBody">This is a preview of how your selected fonts will look together.</p>
+    </div>
+
+    <p id="accessibilityScore">Accessibility Score: N/A</p>
+
+    <button id="applyToDesign">Apply to Design</button>
+
+    <script>
+        document.getElementById('generatePair').onclick = () => {
+            const vibe = document.getElementById('vibe').value;
+            parent.postMessage({ pluginMessage: { type: 'generate-pair', vibe: vibe } }, '*');
+        }
+
+        document.getElementById('applyToDesign').onclick = () => {
+            parent.postMessage({ pluginMessage: { type: 'apply-to-design' } }, '*');
+        }
+
+        onmessage = (event) => {
+            const message = event.data.pluginMessage;
+            if (message.type === 'update-preview') {
+                document.getElementById('previewHeading').style.fontFamily = message.headingFont;
+                document.getElementById('previewBody').style.fontFamily = message.bodyFont;
+                document.getElementById('accessibilityScore').textContent = `Accessibility Score: ${message.score}`;
+            }
+        }
+    </script>
+</body>
+</html>
