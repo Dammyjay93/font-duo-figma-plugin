@@ -1,0 +1,8 @@
+<h2>Font Duo</h2>
+<p>Click the button to create sample text.</p>
+<button id="create">Create Text</button>
+<script>
+document.getElementById('create').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'create-text' } }, '*')
+}
+</script>
