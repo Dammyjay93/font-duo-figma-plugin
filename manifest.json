@@ -1,9 +1,8 @@
 {
-    "name": "Font Duo",
-    "id": "your-plugin-id",
-    "api": "1.0.0",
-    "main": "code.js",
-    "ui": "ui.html",
-    "editorType": ["figma"]
-  }
-  
+  "name": "Font Duo",
+  "id": "your-plugin-id",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"]
+}

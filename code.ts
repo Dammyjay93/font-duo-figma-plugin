@@ -1,7 +1,12 @@
+interface FontPair {
+  heading: string;
+  body: string;
+}
+
 figma.showUI(__html__, { width: 300, height: 450 });
 
-figma.ui.onmessage = async (msg) => {
-  if (msg.type === 'generate-pair') {
+figma.ui.onmessage = async (msg: { type: string; vibe?: string }) => {
+  if (msg.type === 'generate-pair' && msg.vibe) {
     const pair = generateFontPair(msg.vibe);
     const score = calculateAccessibilityScore(pair);
     
@@ -17,9 +22,8 @@ figma.ui.onmessage = async (msg) => {
   }
 };
 
-function generateFontPair(vibe) {
-  // This is a placeholder. We'll implement a real algorithm later.
-  const pairs = {
+function generateFontPair(vibe: string) {
+  const pairs: { [key: string]: { heading: string; body: string } } = {
     minimalist: { heading: 'Helvetica', body: 'Arial' },
     modern: { heading: 'Futura', body: 'Roboto' },
     classic: { heading: 'Garamond', body: 'Times New Roman' }
@@ -27,7 +31,7 @@ function generateFontPair(vibe) {
   return pairs[vibe] || pairs.minimalist;
 }
 
-function calculateAccessibilityScore(pair) {
+function calculateAccessibilityScore(pair: { heading: string; body: string }): number {
   // This is a placeholder. We'll implement a real scoring system later.
   return Math.floor(Math.random() * 41) + 60; // Random score between 60 and 100
 }
