@@ -41,11 +41,11 @@ body {
 }
 
 .lock {
-    background-image: url('lock-icon.svg');
+    background-image: url('lock.svg');
 }
 
 .refresh {
-    background-image: url('refresh-icon.svg');
+    background-image: url('swap.svg');
 }
 
 .headline .sample-text {
@@ -107,7 +107,7 @@ body {
 .refresh-icon {
     width: 12px;
     height: 12px;
-    background-image: url('refresh-icon.svg');
+    background-image: url('swap.svg');
 }
 
 .tip {
