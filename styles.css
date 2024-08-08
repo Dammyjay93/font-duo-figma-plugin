@@ -1,0 +1,118 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 16px;
+    background-color: #2C2C2C;
+    color: white;
+}
+
+.font-duo-plugin {
+    width: 232px;
+}
+
+.font-sample {
+    margin-bottom: 16px;
+}
+
+.font-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.font-name {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.font-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.icon-button {
+    width: 12px;
+    height: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.lock {
+    background-image: url('lock-icon.svg');
+}
+
+.refresh {
+    background-image: url('refresh-icon.svg');
+}
+
+.headline .sample-text {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.body .sample-text {
+    font-size: 11px;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.vibe-selector > p {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 4px;
+}
+
+.vibe-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.vibe-button {
+    padding: 4px 8px;
+    background-color: #3C3C3C;
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    color: white;
+    cursor: pointer;
+}
+
+.vibe-button.more {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 4px 8px;
+    background-color: #18A0FB;
+    border: none;
+    border-radius: 6px;
+    font-size: 11px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.refresh-icon {
+    width: 12px;
+    height: 12px;
+    background-image: url('refresh-icon.svg');
+}
+
+.tip {
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 0;
+}

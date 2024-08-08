@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body { font-family: sans-serif; padding: 20px; }
-        select, button { margin: 10px 0; display: block; width: 100%; }
-        #preview { border: 1px solid #ccc; padding: 10px; margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Font Duo</h2>
-    
-    <label for="vibe">Choose Your Vibe:</label>
-    <select id="vibe">
-        <option value="minimalist">Minimalist</option>
-        <option value="modern">Modern</option>
-        <option value="classic">Classic</option>
-    </select>
-
-    <button id="generatePair">Generate Font Pair</button>
-
-    <div id="preview">
-        <h3 id="previewHeading">Preview Heading</h3>
-        <p id="previewBody">This is a preview of how your selected fonts will look together.</p>
+    <div class="font-duo-plugin">
+        <div class="font-sample headline">
+            <div class="font-info">
+                <span class="font-name">Inter</span>
+                <div class="font-actions">
+                    <button class="icon-button lock"></button>
+                    <button class="icon-button refresh"></button>
+                </div>
+            </div>
+            <p class="sample-text">This is a sample headline text</p>
+        </div>
+        
+        <div class="font-sample body">
+            <div class="font-info">
+                <span class="font-name">News Gothic</span>
+                <div class="font-actions">
+                    <button class="icon-button lock"></button>
+                    <button class="icon-button refresh"></button>
+                </div>
+            </div>
+            <p class="sample-text">Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. It involves choosing typefaces, point sizes, line lengths, line-spacing, and letter-spacing, and adjusting the space between pairs of letters.</p>
+        </div>
+        
+        <div class="vibe-selector">
+            <p>Choose your vibe:</p>
+            <div class="vibe-buttons">
+                <button class="vibe-button">Elegant</button>
+                <button class="vibe-button">Minimalist</button>
+                <button class="vibe-button more">More ▾</button>
+            </div>
+        </div>
+        
+        <button class="primary-button">
+            <span class="refresh-icon"></span>
+            I'm feeling lucky
+        </button>
+        
+        <p class="tip">💡 Tip: Edit the preview text to see how your content looks with different font pairings.</p>
     </div>
 
-    <p id="accessibilityScore">Accessibility Score: N/A</p>
-
-    <button id="applyToDesign">Apply to Design</button>
-
     <script>
-        document.getElementById('generatePair').onclick = () => {
-            const vibe = document.getElementById('vibe').value;
-            parent.postMessage({ pluginMessage: { type: 'generate-pair', vibe: vibe } }, '*');
-        }
-
-        document.getElementById('applyToDesign').onclick = () => {
-            parent.postMessage({ pluginMessage: { type: 'apply-to-design' } }, '*');
-        }
-
-        onmessage = (event) => {
-            const message = event.data.pluginMessage;
-            if (message.type === 'update-preview') {
-                document.getElementById('previewHeading').style.fontFamily = message.headingFont;
-                document.getElementById('previewBody').style.fontFamily = message.bodyFont;
-                document.getElementById('accessibilityScore').textContent = `Accessibility Score: ${message.score}`;
-            }
-        }
+        // Your JavaScript here
     </script>
 </body>
 </html>
